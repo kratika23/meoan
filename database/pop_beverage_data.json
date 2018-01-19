@@ -1,0 +1,64 @@
+[
+{
+"Name": "Special Falooda",
+"Price": 80,
+"MealType": "Beverage",
+"quantity": 1
+},
+
+{
+"Name": "Blissful Brownie",
+"Price": 70,
+"MealType": "Beverage",
+"quantity": 1
+},
+
+{
+"Name": "Oreo Cookies",
+"Price": 110,
+"MealType": "Beverage",
+"quantity": 1
+},
+
+{
+"Name": "Watermelon Juice",
+"Price": 40,
+"MealType": "Beverage",
+"quantity": 1
+},
+
+{
+"Name": "Banana Shake",
+"Price": 50,
+"MealType": "Beverage",
+"quantity": 1
+},
+
+{
+"Name": "Body Cooler",
+"Price": 50,
+"MealType": "Beverage",
+"quantity": 1
+},
+
+{
+"Name": "Heavy Nutrients",
+"Price": 90,
+"MealType": "Beverage",
+"quantity": 1
+},
+
+{
+"Name": "Simple Vanilla",
+"Price": 50,
+"MealType": "Beverage",
+"quantity": 1
+},
+
+{
+"Name": "Sweet Lassi",
+"Price": 40,
+"MealType": "Beverage",
+"quantity": 1
+}
+]

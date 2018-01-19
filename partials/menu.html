@@ -1,0 +1,397 @@
+﻿<figure class="menu_jumbotron">
+<ul class="breadcrumb">
+  <li><a href="home">Home</a></li>
+  <li>Menu</li>
+</ul>
+</figure>
+<div style="margin-top:-20px;background: #2F4F4F; height:100px;">
+<h1 style="font-size:50px; color: #F5F5DC; font-family:Raleway; text-align:center; padding:30px; text-decoration: overline; text-decoration-color:#F5F5DC;"><i>Our Menu</i></h1>
+</div>
+
+<!-- Breakfast trigger modal -->
+<div class="menu_content">
+<button class="menu_button"  data-toggle="modal" data-target="#BreakfastModal">
+<figure style="width:800px">
+  <div>
+	<span>Breakfast</span>
+    <span>100% Organic</span>
+	</div>
+</figure>
+</button>
+
+<!-- Lunch trigger modal -->
+
+<button type="button" data-toggle="modal" data-target="#LunchModal" class="menu_button" style="margin-top:100px;">
+<figure style="width:800px">
+  <div>
+	<span>Lunch</span>
+    <span>100% Organic</span>
+  </div>
+</figure>
+</button>
+
+
+<!-- Dinner trigger modal -->
+
+<button type="button" data-toggle="modal" data-target="#DinnerModal" class="menu_button" style="margin-top:200px;">
+<figure style="width:800px">
+  <div>
+    <span>Dinner</span>
+    <span>100% Organic</span>
+  </div>
+</figure>
+</button>
+
+<!-- Beverage trigger modal -->
+
+<button type="button" data-toggle="modal" data-target="#BeverageModal" class="menu_button" style="margin-top:300px;">
+<figure style="width:800px">
+  <div>
+    <span>Beverages</span>
+    <span>100% Organic</span>
+  </div>
+</figure>
+</button>
+
+<!-- Dessert trigger modal -->
+
+<button type="button" data-toggle="modal" data-target="#DessertModal" class="menu_button" style="margin-top:400px;">
+<figure style="width:800px">
+  <div>
+    <span>Desserts</span>
+    <span>100% Organic</span>
+  </div>
+</figure>
+</button>
+</div>
+
+<!-- Combo trigger modal -->
+
+<button type="button" data-toggle="modal" data-target="#ComboModal" class="menu_button" style="margin-top:-200px;">
+<figure style="width:800px">
+  <div>
+    <span>Combo Offers</span>
+    <span>100% Organic</span>
+  </div>
+</figure>
+</button>
+</div>
+
+<!-- Breakfast modal -->
+<div ng-controller="MenuController">
+<div class="modal fade" id="BreakfastModal" tabindex="-1" role="dialog" aria-labelledby="BreakfastModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content"  ng-controller="StoreController">
+      <div class="modal-header">
+	  <table>
+	  <tr>
+	  <td>
+       <h5 class="modal-title" id="BreakfastModalTitle">Today's Breakfast</h5>
+	  </td>
+		<td>
+		<div style="margin-top:70px; margin-left:40px;">
+		&nbsp <img src="../meoan/images/cart_icon.png" alt="Cart Icon" id="carticon_img">
+		<label> {{calcTotalquantity()}} &nbsp {{calcTotalAmount() | currency:"&#8360"}} </label>
+		</div>
+		</td>
+		</tr>
+		</table>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table>
+        <tr ng-repeat="item in breakfast_items" style="padding:10px;">
+            <td>
+			<label style="margin-left:50px;" ><i>{{ item.Name }}</i></label>&nbsp &nbsp &nbsp &nbsp &nbsp 
+			</td>
+			<td>
+			<label style="margin-left:50px; text-decoration:none;"><i>{{ item.Price | currency:"&#8360"}}<i></label>
+			</td>
+			<td>
+            <button style="margin-left:30px;" class="btn btn-dark" ng-click="increaseItemAmount(item)" ng-disabled= "inc < 1">
+              +
+            </button>
+			<label style="text-decoration:none; margin-left:5px;"><i>{{quantity}}</i></label>
+            <button style="margin-left:5px;" class="btn btn-dark" ng-click="decreaseItemAmount(item)" ng-disabled= "quantity < 2">
+              -
+            </button>
+			<button type="button" style="margin-left:30px;" class="btn btn-dark" ng-click="addToCart(item)" ng-disabled="add > 0">Add To Cart</button>
+			<td>
+            <input type="image" class="btn btn-default" ng-click="removeFromCart(item)" src="../meoan/images/icons8-delete-50.png" style="height:25px; width:30px;" alt="Submit">
+          </td>
+			</td>
+        </tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Lunch Modal -->
+
+<div class="modal fade" id="LunchModal" tabindex="-1" role="dialog" aria-labelledby="LunchModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" ng-controller="StoreController">
+      <div class="modal-header">
+        <table>
+	  <tr>
+	  <td>
+       <h5 class="modal-title" id="LunchModalTitle">Today's Lunch</h5>
+	  </td>
+		<td>
+		<div style="margin-top:80px; margin-left:100px;">
+		&nbsp <img src="../meoan/images/cart_icon.png" alt="Cart Icon" id="carticon_img">
+		<label>{{calcTotalquantity()}} &nbsp {{calcTotalAmount() | currency:"&#8360"}} </label> 
+		</div>
+		</td>
+		</tr>
+		</table>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table>
+        <tr ng-repeat="item in lunch_items" style="padding:10px;">
+            <td>
+			<label style="margin-left:50px;"><i>{{ item.Name }}</i></label>&nbsp &nbsp &nbsp &nbsp &nbsp 
+			</td>
+			<td>
+			<label style="margin-left:50px; text-decoration:none;"><i>{{ item.Price | currency:"&#8360"}}</i></label>
+			</td>
+			<td>
+            <button style="margin-left:30px;" class="btn btn-dark" ng-click="increaseItemAmount(item)" ng-disabled= "inc < 1">
+              +
+            </button>
+			<label style="text-decoration:none; margin-left:5px;"><i>{{quantity}}</i></label>
+            <button style="margin-left:5px;" class="btn btn-dark" ng-click="decreaseItemAmount(item)" ng-disabled="quantity < 2">
+              -
+            </button>
+			<button type="button" style="margin-left:30px;" class="btn btn-dark" ng-click="addToCart(item)" ng-disabled="add > 0">Add To Cart</button>
+			<td>
+            <input type="image" class="btn btn-default" ng-click="removeFromCart(item)" src="../meoan/images/icons8-delete-50.png" style="height:25px; width:30px;" alt="Submit">
+          </td>
+			</td>
+        </tr>
+</table>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Dinner Modal -->
+
+<div class="modal fade" id="DinnerModal" tabindex="-1" role="dialog" aria-labelledby="DinnerModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" ng-controller="StoreController">
+      <div class="modal-header">
+        <table>
+	  <tr>
+	  <td>
+       <h5 class="modal-title" id="DinnerModalTitle">Today's Dinner</h5>
+	  </td>
+		<td>
+		<div style="margin-top:80px; margin-left:60px;">
+		&nbsp <img src="../meoan/images/cart_icon.png" alt="Cart Icon" id="carticon_img">
+		<label>{{calcTotalquantity()}}  &nbsp {{calcTotalAmount() | currency:"&#8360"}} </label>
+		</div>
+		</td>
+		</tr>
+		</table>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table>
+        <tr ng-repeat="item in dinner_items" style="padding:10px;">
+            <td>
+			<label style="margin-left:50px;"><i>{{ item.Name }}</i></label>&nbsp &nbsp &nbsp &nbsp &nbsp 
+			</td>
+			<td>
+			<label style="margin-left:30px;text-decoration:none;"><i>{{ item.Price | currency:"&#8360"}}</i></label>
+			</td>
+			<td>
+            <button style="margin-left:30px;" class="btn btn-dark" ng-click="increaseItemAmount(item)" ng-disabled= "inc < 1">
+              +
+            </button>
+			<label style="text-decoration:none; margin-left:5px;"><i>{{quantity}}</i></label>
+            <button style="margin-left:5px;" class="btn btn-dark" ng-click="decreaseItemAmount(item)"ng-disabled="quantity < 2">
+              -
+            </button>
+			<button type="button" style="margin-left:50px;" class="btn btn-dark" ng-click="addToCart(item)" ng-disabled="add > 0">Add To Cart</button>
+			<td>
+            <input type="image" class="btn btn-default" ng-click="removeFromCart(item)" src="../meoan/images/icons8-delete-50.png" style="height:25px; width:30px;" alt="Submit">
+          </td>
+			</td>
+        </tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Beverage Modal -->
+
+<div class="modal fade" id="BeverageModal" tabindex="-1" role="dialog" aria-labelledby="BeverageModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" ng-controller="StoreController">
+      <div class="modal-header">
+        <table>
+	  <tr>
+	  <td>
+       <h5 class="modal-title" id="BeverageModalTitle">Have A Sip !!!</h5>
+	  </td>
+		<td>
+		<div style="margin-top:70px; margin-left:80px;">
+		&nbsp <img src="../meoan/images/cart_icon.png" alt="Cart Icon" id="carticon_img">
+		<label>{{calcTotalquantity()}} &nbsp {{calcTotalAmount() | currency:"&#8360"}} </label>
+		</div>
+		</td>
+		</tr>
+		</table>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <table>
+        <tr ng-repeat="item in beverage_items" style="padding:10px;">
+            <td>
+			<label style="margin-left:50px;"><i>{{ item.Name }}</i></label>&nbsp &nbsp &nbsp &nbsp &nbsp 
+			</td>
+			<td>
+			<label style="margin-left:50px; text-decoration:none;"><i>{{ item.Price | currency:"&#8360"}}</i></label>
+			</td>
+			<td>
+            <button style="margin-left:30px;" class="btn btn-dark" ng-click="increaseItemAmount(item)" ng-disabled= "inc < 1">
+              +
+            </button>
+			<label style="text-decoration:none; margin-left:5px;"><i>{{quantity}}</i></label>
+            <button style="margin-left:5px;" class="btn btn-dark" ng-click="decreaseItemAmount(item)" ng-disabled="quantity < 2">
+              -
+            </button>
+			<button type="button" style="margin-left:30px;" class="btn btn-dark" ng-click="addToCart(item)" ng-disabled="add > 0">Add To Cart</button>
+			<td>
+            <input type="image" class="btn btn-default" ng-click="removeFromCart(item)" src="../meoan/images/icons8-delete-50.png" style="height:25px; width:30px;" alt="Submit">
+          </td>
+			</td>
+        </tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dessert Modal -->
+
+<div class="modal fade" id="DessertModal" tabindex="-1" role="dialog" aria-labelledby="DessertModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" ng-controller="StoreController">
+      <div class="modal-header">
+        <table>
+	  <tr>
+	  <td>
+       <h5 class="modal-title" id="DessertModalTitle">Luxury Delights</h5>
+	  </td>
+		<td>
+		<div style="margin-top:90px; margin-left:30px;">
+		&nbsp <img src="../meoan/images/cart_icon.png" alt="Cart Icon" id="carticon_img">
+		<label>{{calcTotalquantity()}} &nbsp {{calcTotalAmount() | currency:"&#8360"}} </label>
+		</div>
+		</td>
+		</tr>
+		</table>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+      </div>
+      <div class="modal-body">
+        <table>
+        <tr ng-repeat="item in dessert_items">
+            <td>
+			<label style="margin-left:30px;"><i>{{ item.Name }}</i></label> 
+			</td>
+			<td>
+			<label style="margin-left:30px; text-decoration:none;"><i>{{ item.Price | currency:"&#8360"}}</i></label>
+			</td>
+			<td>
+            <button class="btn btn-dark" ng-click="increaseItemAmount(item)" ng-disabled= "inc < 1">
+              +
+            </button>
+			<label style="text-decoration:none; margin-left:5px;"><i>{{quantity}}</i></label>
+            <button style="margin-left:5px;" class="btn btn-dark" ng-click="decreaseItemAmount(item)" ng-disabled="quantity < 2">
+              -
+            </button>
+			<button type="button" style="margin-left:30px;" class="btn btn-dark" ng-click="addToCart(item)" ng-disabled="add > 0">Add To Cart</button>
+			<td>
+            <input type="image" class="btn btn-default" ng-click="removeFromCart(item)" src="../meoan/images/icons8-delete-50.png" style="height:25px; width:30px;" alt="Submit">
+          </td>
+			</td>
+        </tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Combo Offers modal -->
+
+
+<div ng-controller="MenuController">
+<div class="modal fade" id="ComboModal" tabindex="-1" role="dialog" aria-labelledby="ComboModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content"  ng-controller="StoreController">
+      <div class="modal-header">
+	  <table>
+	  <tr>
+	  <td>
+       <h5 class="modal-title" id="ComboModalTitle">Its Combo Time !!!</h5>
+	  </td>
+		<td>
+		<div style="margin-top:70px; margin-left:40px;">
+		&nbsp <img src="../meoan/images/cart_icon.png" alt="Cart Icon" id="carticon_img">
+		<label> {{calcTotalquantity()}} &nbsp {{calcTotalAmount() | currency:"&#8360"}} </label>
+		</div>
+		</td>
+		</tr>
+		</table>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table>
+        <tr ng-repeat="item in combo_items" style="padding:10px;">
+            <td>
+			<label style="margin-left:10px;" ><i>{{ item.Name }}</i></label>&nbsp &nbsp &nbsp &nbsp &nbsp 
+			</td>
+			<td>
+			<label style="margin-left:10px; text-decoration:none;"><i>{{ item.Price | currency:"&#8360"}}<i></label>
+			</td>
+			<td>
+            <button class="btn btn-dark" ng-click="increaseItemAmount(item)" ng-disabled= "inc < 1">
+              +
+            </button>
+			<label style="text-decoration:none; margin-left:5px;"><i>{{quantity}}</i></label>
+            <button style="margin-left:5px;" class="btn btn-dark" ng-click="decreaseItemAmount(item)" ng-disabled="quantity < 2">
+              -
+            </button>
+			<button type="button" style="margin-left:15px;" class="btn btn-dark" ng-click="addToCart(item)" ng-disabled="add > 0">Add To Cart</button>
+			<td>
+            <input type="image" class="btn btn-default" ng-click="removeFromCart(item)" src="../meoan/images/icons8-delete-50.png" style="height:25px; width:30px;" alt="Submit">
+          </td>
+			</td>
+        </tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>

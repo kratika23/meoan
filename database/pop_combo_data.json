@@ -1,0 +1,36 @@
+[
+{
+"Name": "Dal Rice Combo",
+"Price": 120,
+"MealType": "Combo",
+"quantity": 1
+},
+
+{
+"Name": "Manchurian Noodles Combo",
+"Price": 120,
+"MealType": "Combo",
+"quantity": 1
+},
+
+{
+"Name": "Mix Veg Biryani",
+"Price": 120,
+"MealType": "Combo",
+"quantity": 1
+},
+
+{
+"Name": "Mini Meal",
+"Price": 120,
+"MealType": "Combo",
+"quantity": 1
+},
+
+{
+"Name": "Pizza Treat",
+"Price": 200,
+"MealType": "Combo",
+"quantity": 1
+}
+]

@@ -1,0 +1,64 @@
+[
+{
+"Name": "Raj Bhog",
+"Price": 25,
+"MealType": "Dessert",
+"quantity": 1
+},
+
+{
+"Name": "Rasmalai",
+"Price": 50,
+"MealType": "Dessert",
+"quantity": 1
+},
+
+{
+"Name": "Rasgulla",
+"Price": 25,
+"MealType": "Dessert",
+"quantity": 1
+},
+
+{
+"Name": "Cham Cham",
+"Price": 30,
+"MealType": "Dessert",
+"quantity": 1
+},
+
+{
+"Name": "Special Jalebi",
+"Price": 50,
+"MealType": "Dessert",
+"quantity": 1
+},
+
+{
+"Name": "Vanilla Ice cream",
+"Price": 50,
+"MealType": "Dessert",
+"quantity": 1
+},
+
+{
+"Name": "Butterscotch Ice cream",
+"Price": 80,
+"MealType": "Dessert",
+"quantity": 1
+},
+
+{
+"Name": "Chocolate Ice cream",
+"Price": 100,
+"MealType": "Dessert",
+"quantity": 1
+},
+
+{
+"Name": "Fruit Exotica Ice cream",
+"Price": 120,
+"MealType": "Dessert",
+"quantity": 1
+}
+]

@@ -1,0 +1,36 @@
+[
+{
+"Name": "Plain Parantha",
+"Price": 10,
+"MealType": "Breakfast",
+"quantity": 1
+},
+
+{
+"Name": "Aloo Parantha",
+"Price": 50,
+"MealType": "Breakfast",
+"quantity": 1
+},
+
+{
+"Name": "Onion Parantha",
+"Price": 40,
+"MealType": "Breakfast",
+"quantity": 1
+},
+
+{
+"Name": "Paneer Parantha",
+"Price": 60,
+"MealType": "Breakfast",
+"quantity": 1
+},
+
+{
+"Name": "Idli Sambhar",
+"Price": 30,
+"MealType": "Breakfast",
+"quantity": 1
+}
+]

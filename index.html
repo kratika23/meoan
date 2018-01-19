@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Angular Library -->
+	<script type="text/javascript" src="library/angular.js"></script>
+	<script type="text/javascript" src="library/angular-route.js"></script>
+	<script type="text/javascript" src="library/angular-animate.js"></script>
+	<script type="text/javascript" src="library/angular-messages.js"></script>
+	<script type="text/javascript" src="library/angular-aria.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!-- Datepicker Library -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.css">
+	<link rel="stylesheet" type="text/css" href="https://material.angularjs.org/1.1.4/docs.css">
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+	<script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.4/angular-material.js"></script>
+	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+	
+	<!-- Map Library -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoTXOfladZgPYk1SEhoU_5S88wUtEa4k0&libraries=places"></script>
+	
+    	
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+	 <!-- Custom CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	
+	
+	 <!-- Custom JS -->
+	<script type="text/javascript" src="js/route.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
+	<script type="text/javascript" src="js/datepicker.js"></script>
+    <script type="text/javascript" src="js/store.js"></script>
+    <script type="text/javascript" src="js/jquery_modal_popup.js"></script>	
+	 
+  </head>
+   <body ng-app="app" ng-controller="StoreController">
+	<div id="main">
+	<div class=" amber">
+	<div>
+	 <i class="fa fa-facebook-f social" style="font-size:24px; cursor:pointer; padding:10px"></i>
+	 <i class="fa fa-instagram" style="font-size:24px; cursor:pointer; padding:10px"></i>
+	 <i class="fa fa-twitter" style="font-size:24px; cursor:pointer"></i>
+	</div>
+	 <div class="pullLeft container"> 
+	  <a href="index.html#/home">HOME</a>
+	  <a href="index.html#/home/#reservation">BOOK YOUR PRIOR MEAL</a>
+	  <a href="index.html#/home/#combo_off">COMBOKITS</a>
+	  <a href="index.html#/our_vision">OUR VISION</a>
+	  <a href="index.html#/contact_us">CONTACT</a>	  
+	</div>
+	<a href="index.html#/shopping_cart" style="color:#000;text-decoration:none;margin-left:1250px">
+	  <img src="images/cart_icon.png" alt="Main_Cart" style="height:30px; weight:30px; margin-top:-40px;">
+		<label style="font-size:10px;">{{calcTotalquantity()}}</label>
+	  </a>
+		</div>
+	<div>
+        <ng-view></ng-view>
+	</div>
+	</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
+

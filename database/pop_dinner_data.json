@@ -1,0 +1,50 @@
+[
+{
+"Name": "Dal Makhani",
+"Price": 70,
+"MealType": "Dinner",
+"quantity": 1
+},
+
+{
+"Name": "Rajma Masala",
+"Price": 80,
+"MealType": "Dinner",
+"quantity": 1
+},
+
+{
+"Name": "Matar Paneer",
+"Price": 85,
+"MealType": "Dinner",
+"quantity": 1
+},
+
+{
+"Name": "Veg Manchurian",
+"Price": 60,
+"MealType": "Dinner",
+"quantity": 1
+},
+
+{
+"Name": "Three Veg in Curry",
+"Price": 140,
+"MealType": "Dinner",
+"quantity": 1
+},
+
+{
+"Name": "Gobhi Mussallam",
+"Price": 120,
+"MealType": "Dinner",
+"quantity": 1
+},
+
+{
+"Name": "Kurkuri Bhindi",
+"Price": 80,
+"MealType": "Dinner",
+"quantity": 1
+}
+]

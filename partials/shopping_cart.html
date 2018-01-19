@@ -1,0 +1,82 @@
+<div id="cart_heading">
+<h5>
+    <h5 style="font-size:30px; text-align:center; padding:30px;">
+	<i>Thank you for shopping at the Meoan Organic Store.</i>
+	</h5>
+</h5>
+</div>
+<div id="cart_div">
+<div ng-controller="cartController" class="container">
+    <div class="row">
+	<div class="col-9">
+      <table class="table table-bordered">
+	  <thead class="table-success">
+        <tr>
+		
+		<!-- heading -->
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+		  <th></th>
+        </tr>
+		</thead>
+		
+		
+		<!-- empty cart message -->        
+		<tr ng-hide="calcTotalquantity() > 0" >
+                    <td class="tdCenter" colspan="4">
+                        Your cart is empty.
+                    </td>
+                </tr>
+		
+		
+		
+		<!-- items -->
+		<tr ng-repeat="item in cartStorage.items">
+		  	
+		  <td>{{item.Name}}</td>
+          <td>
+            <button ng-click="increaseItemAmount(item)" class="btn btn-dark">
+              +
+            </button>
+			<label>{{item.quantity}}</label>
+            <button ng-click="decreaseItemAmount(item)" ng-disabled ="item.quantity < 2" class="btn btn-dark">
+              -
+            </button>
+			</td>
+			<td>{{item.Price * item.quantity | currency:"&#8360"}}</td>
+			<td>
+            <input type="image" class="btn btn-default" ng-click="removeFromCart(item)" src="../meoan/images/icons8-delete-50.png" style="height:25px; width:30px;" alt="Submit">
+          </td>
+		  </tr>
+		  
+		  <!-- footer -->
+                <thead class="table-success">
+				<tr>
+                    <th><b>Total</b></th>
+                    <th class="tdCenter"><b>{{calcTotalquantity()}}</b></th>
+                    <th class="tdRight"><b>{{calcTotalAmount() | currency:"&#8360"}}</b></th>
+                <th></th>
+				</tr>
+				</thead>
+      </table>
+	  </div>
+	  <div class="col-3" style="padding-left:30px; ">
+                <button style="height:40px; width:200px;font-size:15px;" 
+				type="button" 
+				class="btn btn-primary btn-dark btn-lg"
+				onclick="window.location.href='index.html'">
+				Back to store
+                </button>
+            
+
+            <br /><br /><br/><br/>
+
+                <button type="button" style="height:40px; width:200px; font-size:15px;" class="btn btn-dark btn-primary btn-lg">
+                    CheckOut
+                </button>
+            
+        </div>
+		</div>
+    </div>
+  </div>

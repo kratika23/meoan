@@ -1,0 +1,50 @@
+[
+{
+"Name": "Sambhar Rice",
+"Price": 50,
+"MealType": "Lunch",
+"quantity": 1
+},
+
+{
+"Name": "Aloo Gobhi",
+"Price": 70,
+"MealType": "Lunch",
+"quantity": 1
+},
+
+{
+"Name": "Paneer Bhurji",
+"Price": 100,
+"MealType": "Lunch",
+"quantity": 1
+},
+
+{
+"Name": "Mix Veg",
+"Price": 60,
+"MealType": "Lunch",
+"quantity": 1
+},
+
+{
+"Name": "Rajma Chawal",
+"Price": 80,
+"MealType": "Lunch",
+"quantity": 1
+},
+
+{
+"Name": "Chole Puri",
+"Price": 80,
+"MealType": "Lunch",
+"quantity": 1
+},
+
+{
+"Name": "Veg Thali",
+"Price": 120,
+"MealType": "Lunch",
+"quantity": 1
+}
+]

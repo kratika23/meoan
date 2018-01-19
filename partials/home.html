@@ -1,0 +1,135 @@
+﻿<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+	    <h4 class="modal-title" style="margin-left:80px">Choose Your Area</h4>   
+      </div>
+      <div class="modal-body">
+        <input id="first" type="radio" name="content" value="Gachibowli">&nbsp &nbsp &nbsp
+		<label style="font-size:14px;">Gachibowli</label></br>
+		<input id="first" type="radio" name="content" value="Manikonda">&nbsp &nbsp &nbsp
+		<label style="font-size:14px;">Manikonda</label></br>
+		<input id="first" type="radio" name="content" value="Jubilee Hills">&nbsp &nbsp &nbsp
+		<label style="font-size:14px;">Jubilee Hills</label></br>
+		<input id="first" type="radio" name="content" value="Hitech City">&nbsp &nbsp &nbsp
+		<label style="font-size:14px;">Hitech City</label></br>
+		<input id="first" type="radio" name="content" value="Madhapur">&nbsp &nbsp &nbsp
+		<label style="font-size:14px;">Madhapur</label></br>
+		<input id="first" type="radio" name="content" value="others">&nbsp &nbsp &nbsp
+		<label style="font-size:14px;">Others - Will be Coming Soon</label></br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-success" data-dismiss="modal" style="width:80px;">OK</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="vision pic-wrapper">
+	  <figure class=" slider pic-1"></figure>
+	  <figure class="slider pic-2"></figure>
+	  <figure class="slider pic-3"></figure>
+	  <figure class="slider pic-4"></figure>
+	</div>
+	<div class="combo_offers" ng-controller="TestCtrl as test">
+	<div class="combination" id="combo_off">
+	<div id="combo_icon">
+	<div> <img src="../meoan/images/combo_icon.png" alt="Combo Icon" id="comboicon_img"> </div>
+	<div> <h2 id="combo_heading">COMBO OFFERS</h2><p id="combo_detail"><i>Know your farmer, know your food...</i> </p> </div>
+	</div>
+	<div id="all_combo_left">
+	<figure id="combo_1" class="foodkit" ng-mouseover="test.showBoxOne = true" ng-mouseout="test.showBoxOne = false">
+    <div>
+	<p onclick="window.location.href='#reservation'" class="box-one" ng-show="test.showBoxOne">ORDER</br>NOW</p>
+	</div>
+	<div class="combo_descripton">
+	<p style="border: solid 1px #2F4F4F; border-radius:5px;">&nbsp Vegetarian Rice </br>Bowls</p>
+	</div>
+	</figure>
+	<figure id="combo_2" class="foodkit" ng-mouseover="test.showBoxTwo = true" ng-mouseout="test.showBoxTwo = false">
+	<div>
+	<p onclick="window.location.href='#reservation'" class="box-two" ng-show="test.showBoxTwo">ORDER</br>NOW</p>
+	</div>
+	<div class="combo_descripton">
+	<p style="border: solid 1px #2F4F4F;border-radius:5px;">&nbsp Non-Vegetarian </br>Rice Bowls</p>
+	</div>
+	</figure>
+	</div>
+	<div id="all_combo_right">
+	<figure id="combo_3" class="foodkit"  ng-mouseover="test.showBoxThree = true" ng-mouseout="test.showBoxThree = false">
+	<div>
+	<p onclick="window.location.href='#reservation'" class="box-three" ng-show="test.showBoxThree">ORDER</br>NOW</p>
+	</div>
+	<div class="combo_descripton">
+	<p style="border: solid 1px #2F4F4F; border-radius:5px;">Sambhar Rice with Vegetarian </br>Curries</p></div>
+	</figure>
+	<figure id="combo_4" class="foodkit" ng-mouseover="test.showBoxFour = true" ng-mouseout="test.showBoxFour = false">
+	<div>
+	<p onclick="window.location.href='#reservation'" class="box-four" ng-show="test.showBoxFour">ORDER</br>NOW</p>
+	</div>
+	<div class="combo_descripton">
+	<p style="border: solid 1px #2F4F4F;border-radius:5px;">Sambhar Rice with Non-Vegetarian Curries</p>
+	</div>
+	</figure>
+	</div>
+	</div>
+	</div>
+	<div id="reservation" class="reservation" ng-controller="DatePickerController">
+    <h2><i>Reservations</i></h2>
+	<form name="reservation_form" ng-submit="insertData()">
+	<div class="datepicker">
+    <input id="date" type="text" datepicker-popup="dd-MM-yyyy" ng-model="inpDate" placeholder = "Enter the Date" required/>
+	<label ng-model="Date" style="visibility:hidden;" >Date processed in HTML: {{inpDate | date: 'dd-MM-yyyy'}}</label>
+	<label style="visibility:hidden;">Date processed in Javascript: {{processDate(inpDate)}}</label>
+    </div>
+		<input type='text' class='myBox' placeholder="Enter your name..." ng-model="username" required>
+		<input type='text' class='myBox' name="phone" style="margin-left:100px;" placeholder="Enter your mobile number..." ng-model="mobile_number" ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" required>
+	    </br></br><span ng-show="reservation_form.phone.$invalid" style="margin-left:-300px;">**Enter a Valid Number</span>
+	<div class="book">
+	<button type="submit" class="btn btn-primary btn-lg">Book Your Meal</button>
+	</div>
+	</form>
+	</div>
+	<div class="detail">
+	<div class="detail_each">
+	<figure id="detail_1">
+	<div class="detail_heading">
+	<h4>DELIVERY</h4>
+	<p>Order food online from your favorite locally owned restaurant for fast delivery to your home, office or hotel. Enter your address to find restaurants you prefer most..</p>
+	<button type="button" class="read_more btn btn-primary btn-lg">Read More</button>
+	</div>
+	</figure>
+	<figure id="detail_2">
+	<div class="detail_heading">
+	<h4><b>FORMS OF PAYMENT</b></h4>
+	<p>We accept Cash, Visa, Master Card, American Express, & Discover. We do not currently accept personal checks.</p>
+	</br></br>
+	<button type="button" class=" read_more btn btn-primary btn-lg">Read More</button>
+	</div>
+	</figure>
+	<figure id="detail_3">
+	<div class="detail_heading">
+	<h4>OFFICE LUNCHES</h4>
+	<p>We specialize in group lunch deliveries and drop off catering! Give our local Manager a call for more details regarding keeping your office well fed!</p>
+	</br>
+	<button type="button" class=" read_more btn btn-primary btn-lg">Read More</button>
+	</div>
+	</figure>
+	</div>
+	</div>
+	<div class="guide">
+	<div id="guide_heading">
+	<h1><b>Organic Khana is as Easy as 1,2,3...</b></h1>
+	<h6>Now You Can Make Food Happen Pretty Much Wherever You Are</h6>
+	<figure id="guide_1">
+	<h4>Enter Your Name and &nbsp Locality</h4>
+	</figure>
+	<figure id="guide_2">
+	<h4>Select your meal or &nbsp Book your Tiffin </h4>
+	</figure>
+	<figure id="guide_3">
+	<h4>Order Your Cuisine </br> Online and Enjoy </h4>
+	</figure>
+	</div>
+	</div>
